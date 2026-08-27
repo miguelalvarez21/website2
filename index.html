@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es-HN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kombucha by Brielas — Kombucha viva, artesanal, hondureña</title>
+<meta name="description" content="Kombucha artesanal fermentada a mano en Honduras. Seis sabores con fruta real, sin conservantes. Pedí por WhatsApp.">
+<meta property="og:title" content="Kombucha by Brielas">
+<meta property="og:description" content="Kombucha viva, fermentada en lotes pequeños. Seis sabores. Pedidos por WhatsApp.">
+<meta property="og:image" content="assets/bottle_green_label.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div id="loader">
+  <svg class="loader-bottle" viewBox="0 0 60 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><clipPath id="bottleClip"><path d="M22 6H38V26C38 26 48 34 48 52V128C48 133.5 43.5 138 38 138H22C16.5 138 12 133.5 12 128V52C12 34 22 26 22 26V6Z"/></clipPath></defs>
+    <g clip-path="url(#bottleClip)">
+      <rect id="loaderFill" x="10" y="138" width="40" height="0" fill="#C89B3C"/>
+      <g id="loaderBubbles"></g>
+    </g>
+    <path d="M22 6H38V26C38 26 48 34 48 52V128C48 133.5 43.5 138 38 138H22C16.5 138 12 133.5 12 128V52C12 34 22 26 22 26V6Z" stroke="currentColor" stroke-width="1.4"/>
+  </svg>
+  <div class="loader-pct" id="loaderPct">0%</div>
+  <div class="loader-msg">Fermentando la experiencia…</div>
+</div>
+
+<div id="site" hidden>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <nav class="nav-left">
+      <a href="#proceso">Cómo se hace</a>
+      <a href="#sabores">Sabores</a>
+      <a href="#historia">Historia</a>
+      <a href="#pedir">Cómo pedir</a>
+    </nav>
+    <a class="nav-logo" href="#top">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 6 7.5 6 13a6 6 0 0012 0c0-5.5-6-11-6-11z" stroke="currentColor" stroke-width="1.3"/></svg>
+      <span>Kombucha <em>by</em> Brielas</span>
+    </a>
+    <div class="nav-right">
+      <a class="btn-ghost wa-link" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-text">
+      <h1 class="hero-title">
+        <span class="line"><span>Donde la fruta</span></span>
+        <span class="line"><span>se encuentra</span></span>
+        <span class="line"><span>con el tiempo</span></span>
+      </h1>
+      <p class="hero-copy">Kombucha viva, fermentada a mano en Honduras. Seis sabores hechos con fruta real, té y paciencia — nada artificial.</p>
+      <div class="hero-tags">
+        <span>Fermentación natural</span><span>Sin conservantes</span><span>Lotes pequeños</span>
+      </div>
+    </div>
+
+    <div class="hero-stage">
+      <div class="hero-glow" id="heroGlow"></div>
+      <div class="hero-photos">
+        <img src="assets/bottle_green_label.jpg" alt="Botella de Kombucha by Brielas sabor verde" class="hero-photo active">
+        <img src="assets/bottle_amber.jpg" alt="Botella de Kombucha by Brielas color ámbar" class="hero-photo">
+        <img src="assets/bottle_yellow.jpg" alt="Botella de Kombucha by Brielas color dorado" class="hero-photo">
+      </div>
+      <div class="hero-fizz" id="heroFizz"></div>
+    </div>
+
+    <div class="hero-dropdown-wrap">
+      <button class="dropdown-toggle" id="flavorToggle" aria-expanded="false" aria-controls="flavorMenu">
+        <span class="dot-cluster"><i></i><i></i><i></i></span>
+        <span>Nuestros 6 sabores</span>
+        <svg class="chev" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+      <ul class="dropdown-menu" id="flavorMenu"></ul>
+    </div>
+
+    <p class="hero-scroll">Desliza para explorar</p>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </div>
+
+  <!-- ============ PROCESO ============ -->
+  <section class="process" id="proceso">
+    <div class="section-head reveal">
+      <span class="eyebrow">El proceso</span>
+      <h2>Cómo nace una botella</h2>
+      <p class="section-sub">La kombucha no se mezcla: se cultiva. Cada botella pasa por dos fermentaciones y cerca de dos semanas de trabajo antes de llegar a tus manos.</p>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>Té dulce, la base</h3>
+          <p>Se prepara té —verde o negro— endulzado con azúcar de caña. El azúcar no es para el sabor final: es el alimento del cultivo, y las bacterias y levaduras se lo van comiendo durante la fermentación.</p>
+          <span class="step-meta">Día 1</span>
+        </div>
+      </li>
+      <li class="step reveal">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>El SCOBY hace lo suyo</h3>
+          <p>Al té ya frío se le agrega el SCOBY (el cultivo simbiótico de bacterias y levaduras) junto con kombucha de la tanda anterior. Ahí arranca la primera fermentación: el líquido se vuelve ácido, vivo y ligeramente burbujeante.</p>
+          <span class="step-meta">7 a 14 días</span>
+        </div>
+      </li>
+      <li class="step reveal">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>Fruta real, segunda fermentación</h3>
+          <p>Se retira el cultivo y la kombucha se embotella con fruta, raíces o hierbas frescas. Sellada, las levaduras siguen comiendo los azúcares de la fruta y liberan CO₂ que queda atrapado dentro — así nace la efervescencia, sin gas añadido.</p>
+          <span class="step-meta">2 a 4 días</span>
+        </div>
+      </li>
+      <li class="step reveal">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h3>Frío, prueba y entrega</h3>
+          <p>El refrigerador frena la fermentación y fija el punto exacto de acidez y burbuja. Cada tanda se prueba antes de salir. Al llegar a vos, va directo a la refri.</p>
+          <span class="step-meta">Hasta tu puerta</span>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ SABORES ============ -->
+  <section class="flavors" id="sabores">
+    <div class="section-head reveal">
+      <span class="eyebrow">Menú</span>
+      <h2>Seis sabores, un mismo cultivo</h2>
+      <p class="section-sub">Tocá cualquier sabor para ver ingredientes, perfil de sabor y cómo tomarlo.</p>
+    </div>
+    <div class="flavor-grid" id="flavorGrid"></div>
+  </section>
+
+  <!-- ============ HISTORIA ============ -->
+  <section class="story" id="historia">
+    <div class="story-grid">
+      <div class="story-copy-col reveal">
+        <span class="eyebrow">Nuestra historia</span>
+        <h2>Hecha en casa,<br>tanda por tanda</h2>
+        <p>Kombucha by Brielas nace en una cocina hondureña, entre tandas de té endulzado, cultivos vivos y fruta del mercado del día. No hay línea de producción: hay ollas, botellas, etiquetas pegadas a mano y una prueba de sabor antes de cada entrega.</p>
+        <p>Cada tanda es pequeña a propósito. Es la única forma de que la fruta sea de verdad y de que cada botella salga como debe salir.</p>
+      </div>
+      <div class="story-photos">
+        <figure class="story-photo tall reveal"><img src="assets/person_bottle.jpg" alt="Persona sosteniendo una botella de Kombucha by Brielas" loading="lazy"></figure>
+        <figure class="story-photo reveal"><img src="assets/green_crate_1.jpg" alt="Botellas de kombucha verde listas para entregar" loading="lazy"></figure>
+        <figure class="story-photo reveal"><img src="assets/green_crate_2.jpg" alt="Tanda de botellas de kombucha sobre la mesa" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALERÍA ============ -->
+  <section class="gallery" aria-label="Galería de botellas">
+    <div class="gallery-row" id="galleryRow"></div>
+  </section>
+
+  <!-- ============ BENEFICIOS ============ -->
+  <section class="benefits" id="beneficios">
+    <div class="section-head reveal">
+      <span class="eyebrow">Por qué kombucha</span>
+      <h2>Lo que hay dentro de la botella</h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit reveal">
+        <span class="benefit-num">01</span>
+        <h3>Cultivo vivo</h3>
+        <p>La fermentación produce bacterias y levaduras vivas junto con ácidos orgánicos y una acidez natural. Por eso sabe a fermento, no a refresco.</p>
+      </div>
+      <div class="benefit reveal">
+        <span class="benefit-num">02</span>
+        <h3>Burbuja natural</h3>
+        <p>El CO₂ sale de la propia fermentación dentro de la botella sellada. No se le inyecta gas en ningún momento.</p>
+      </div>
+      <div class="benefit reveal">
+        <span class="benefit-num">03</span>
+        <h3>Poca azúcar al final</h3>
+        <p>El azúcar del té alimenta al cultivo y se va consumiendo mientras fermenta. Lo que queda es una bebida ácida y ligera.</p>
+      </div>
+      <div class="benefit reveal">
+        <span class="benefit-num">04</span>
+        <h3>Ingredientes que reconocés</h3>
+        <p>Té, azúcar de caña, fruta, raíces y hierbas. Sin colorantes, sin saborizantes artificiales, sin conservantes.</p>
+      </div>
+    </div>
+    <p class="disclaimer">La kombucha es un alimento fermentado, no un medicamento. Si estás embarazada, tomando medicamentos o con alguna condición de salud, consultá con tu médico.</p>
+  </section>
+
+  <!-- ============ CÓMO PEDIR ============ -->
+  <section class="order" id="pedir">
+    <div class="order-inner">
+      <span class="eyebrow reveal">Cómo pedir</span>
+      <h2 class="reveal">Tres pasos y listo</h2>
+      <div class="order-steps">
+        <div class="order-step reveal"><span>1</span><p>Elegí tus sabores en el menú.</p></div>
+        <div class="order-step reveal"><span>2</span><p>Tocá WhatsApp: el mensaje ya va escrito.</p></div>
+        <div class="order-step reveal"><span>3</span><p>Coordinamos entrega y pago por el chat.</p></div>
+      </div>
+      <a class="btn-solid big wa-link reveal" href="#" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.9-1.3A10 10 0 1012 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2.1.4 0 .5l-.4.6-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6 0l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.4.2.5.3.1.2.1.7-.1 1.5z"/></svg>
+        Hacer mi pedido por WhatsApp
+      </a>
+      <p class="order-note">Entrega coordinada por chat. Mantené las botellas siempre en refrigeración.</p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq">
+    <div class="section-head reveal"><span class="eyebrow">Preguntas</span><h2>Lo que más nos preguntan</h2></div>
+    <div class="faq-list" id="faqList"></div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 6 7.5 6 13a6 6 0 0012 0c0-5.5-6-11-6-11z" stroke="currentColor" stroke-width="1.3"/></svg>
+        <span>Kombucha <em>by</em> Brielas</span>
+      </div>
+      <a class="btn-solid wa-link" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://www.instagram.com/brielasbakeryhn/" target="_blank" rel="noopener">@brielasbakeryhn</a>
+      <span>Honduras · Lotes pequeños, hechos a mano</span>
+    </div>
+  </footer>
+
+</div>
+
+<!-- floating whatsapp button -->
+<a class="fab wa-link" href="#" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp" hidden id="fab">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.9-1.3A10 10 0 1012 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2.1.4 0 .5l-.4.6-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6 0l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.4.2.5.3.1.2.1.7-.1 1.5z"/></svg>
+</a>
+
+<!-- ============ FLAVOR DETAIL MODAL ============ -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" data-close aria-label="Cerrar">&times;</button>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
