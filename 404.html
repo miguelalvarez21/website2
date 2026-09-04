@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es-HN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página no encontrada — Casa Brielas</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;1,9..144,450&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Esta página va sola a propósito: si algo del sitio falla, tiene que cargar igual. -->
+<style>
+  :root{
+    --ink:#14201A; --cream:#F4EFE4; --amber:#C89B3C; --rosa:#C4566E;
+    --f-display:"Fraunces", Georgia, serif;
+    --f-body:"Space Grotesk", system-ui, sans-serif;
+    --f-mono:"JetBrains Mono", monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;min-height:100svh;display:grid;place-items:center;padding:clamp(20px,5vw,60px);
+    background:radial-gradient(120% 100% at 20% 0%,#25382C 0%,var(--ink) 62%);
+    color:var(--cream);font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-align:center;}
+  .caja{max-width:560px;}
+  .marca{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);}
+
+  .arco{margin:26px auto 6px;width:74px;height:auto;color:var(--cream);display:block;}
+  .arco .relleno{fill:var(--amber);opacity:.85;transform-origin:50% 100%;
+    animation:llenar 2.6s cubic-bezier(.4,0,.3,1) infinite;}
+  @keyframes llenar{0%{transform:scaleY(0);}55%{transform:scaleY(1);}100%{transform:scaleY(1);opacity:0;}}
+
+  h1{font-family:var(--f-display);font-weight:450;margin:14px 0 0;
+    font-size:clamp(64px,16vw,120px);line-height:.9;letter-spacing:-.02em;}
+  h2{font-family:var(--f-display);font-weight:450;margin:14px 0 0;font-size:clamp(21px,3.4vw,30px);line-height:1.2;}
+  p{margin:16px auto 0;max-width:42ch;font-size:15px;line-height:1.75;color:#BEB9A9;}
+
+  .botones{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px;}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;
+    font-size:14.5px;font-weight:600;text-decoration:none;color:var(--ink);background:var(--cream);
+    transition:transform .2s ease,filter .2s ease;}
+  .btn:hover{transform:translateY(-2px);filter:brightness(1.05);}
+  .btn-linea{background:none;color:var(--cream);border:1px solid rgba(237,231,214,.24);font-weight:400;}
+  .btn-linea:hover{background:rgba(237,231,214,.08);}
+  .btn-linea.kombucha:hover{border-color:var(--amber);color:var(--amber);}
+  .btn-linea.bakery:hover{border-color:var(--rosa);color:var(--rosa);}
+
+  .pie{margin-top:40px;padding-top:22px;border-top:1px solid rgba(237,231,214,.14);
+    font-size:12.5px;color:#8A8577;}
+  .pie a{color:#8A8577;text-decoration:none;border-bottom:1px solid rgba(237,231,214,.2);}
+  .pie a:hover{color:var(--amber);border-color:var(--amber);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+    .arco .relleno{transform:none;opacity:.85;}
+  }
+</style>
+</head>
+<body>
+
+<main class="caja">
+  <span class="marca">Casa Brielas</span>
+
+  <svg class="arco" viewBox="0 0 60 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs><clipPath id="cut"><path d="M12 134V54a18 18 0 0136 0v80z"/></clipPath></defs>
+    <g clip-path="url(#cut)"><rect class="relleno" x="10" y="54" width="40" height="80"/></g>
+    <path d="M12 134V54a18 18 0 0136 0v80z" stroke="currentColor" stroke-width="1.4"/>
+    <path d="M4 134h52" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  </svg>
+
+  <h1>404</h1>
+  <h2>Esta puerta no lleva a ningún lado</h2>
+  <p>La página que buscabas no existe o cambió de dirección.
+     Volvé a la entrada y elegí por dónde querés pasar.</p>
+
+  <div class="botones">
+    <a class="btn" href="/" data-home="">Volver al inicio</a>
+    <a class="btn btn-linea kombucha" href="/#kombucha" data-home="#kombucha">Kombucha</a>
+    <a class="btn btn-linea bakery" href="/#reposteria" data-home="#reposteria">Repostería</a>
+  </div>
+
+  <p class="pie">
+    ¿Buscabas algo en concreto? Escribinos:
+    <a href="https://wa.me/50489590153" target="_blank" rel="noopener">+504 8959-0153</a>
+    ·
+    <a href="https://www.instagram.com/brielasbakeryhn/" target="_blank" rel="noopener">@brielasbakeryhn</a>
+  </p>
+</main>
+
+<script>
+  /* En GitHub Pages de proyecto el sitio vive en /nombre-repo/, no en la raíz.
+     En vez de adivinar por el dominio, preguntamos dónde responde el index:
+     primero la raíz y, si no está ahí, el primer tramo de la ruta.
+     Sin JavaScript los href de arriba ya sirven para dominio propio o Netlify. */
+  (function () {
+    var partes = location.pathname.split("/").filter(Boolean);
+    var candidatas = ["/"];
+    if (partes.length) candidatas.push("/" + partes[0] + "/");
+
+    var aplicar = function (base) {
+      var enlaces = document.querySelectorAll("[data-home]");
+      for (var i = 0; i < enlaces.length; i++) {
+        enlaces[i].setAttribute("href", base + enlaces[i].getAttribute("data-home"));
+      }
+    };
+
+    var probar = function (i) {
+      if (i >= candidatas.length) return;            // ninguna respondió: quedan los href por defecto
+      fetch(candidatas[i] + "index.html", { method: "HEAD" })
+        .then(function (r) { if (r.ok) aplicar(candidatas[i]); else probar(i + 1); })
+        .catch(function () { probar(i + 1); });
+    };
+
+    if (window.fetch) probar(0);
+  })();
+</script>
+
+</body>
+</html>

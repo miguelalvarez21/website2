@@ -1,0 +1,9 @@
+# Salida del grafo de conocimiento (herramienta local, no es parte del sitio)
+graphify-out/
+
+# Configuración del editor local
+.claude/
+
+# Sistema
+.DS_Store
+Thumbs.db
